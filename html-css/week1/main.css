@@ -1,3 +1,5 @@
+/*CSS for Week 1 Homework*/
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -33,13 +35,25 @@ body {
 	background-attachment: fixed;
   background-position: right; 
 }
+header {	
+  display: flex;
+	width: 60vw;
+	margin: auto;
+}
 img {
   width: 150px;
   border: 3px solid #dedede;
   margin-right: 30px;
 }
-header {	
-  display: flex;
+.name-div {	
+	width: 50vw;
+}
+main {
+	width: 60vw;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 .icon {
   width: 15px;
@@ -48,8 +62,9 @@ header {
   border: 0;
 }
 #contact {
-  margin: 30px 0;
-}
+	width: 60vw;
+	margin: 30px auto;
+}	
 #contact ul {
   display: flex;
   list-style: none;
@@ -62,6 +77,11 @@ header {
   padding: 0 20px;
   display: flex;
   align-items: center;
+}
+#sub-main {
+  display: flex;
+	width: 60vw;
+	margin: auto;
 }
 #work-desc {
 	color: #888;
@@ -83,14 +103,12 @@ li {
 h1, h2 {
   margin-bottom: 5px;
 }
-#sub-main {
-  display: flex;
-}
+
 #work-experience{
-  width: 50%;
+  width: 50vw;
 }
 #education {
-  width: 50%;
+  width: 50vw;
 }
 .contents {
 	margin: 20px 0;
@@ -104,23 +122,29 @@ h1, h2 {
 .dates {
 	margin-bottom: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+footer {
+	background-color: gray;
+	width: 60vw;
+	display: flex;	
+	color: #eee;
+	padding: 30px;
+	margin: 80px auto;
+}
+.footer-div{
+	width: 50vw;
+}
+footer h3{
+	font-weight: 400;
+	padding-bottom: 5px;
+}
+.footer-div li, .footer-div li a {
+	color: #eee;
+	font-size: 13px;
+	line-height: 18px;
+	margin-left: 5px;
+}
+.footer-div a:hover {
+	color:white;
+	font-weight: 700;
+	border-bottom: 1px solid white;
+}
