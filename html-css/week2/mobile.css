@@ -1,0 +1,4 @@
+#container { width: 548px; }
+.nav-link {
+	flex-direction: column;
+}
