@@ -28,6 +28,7 @@ time, mark, audio, video {
 #container { width:548px; }
 body { font-family:'Merriweather Sans', sans-serif; }
 main, .layer { padding:40px 40px; }
+main p { padding: 10px 0;}
 #home { background-color:#efefef; }
 #home p { margin:5px 0 40px 0; color:#777; }
 #nav-link {	display:flex; flex-direction:column; padding:40px; }
@@ -56,7 +57,7 @@ h4 { margin-top:30px; margin-bottom:20px; }
 .loc-map { width:200px; height:200px; margin:0 30px; }
 #our-office p { margin-left:33px; color:white; }
 .footer-nav li { border-top:1px solid #888;	padding:10px 0; margin:0 30px; width: 150px; }
-.footer-nav li:hover { margin-left:10px; }
+.footer-nav li:hover { margin-left:50px; }
 footer a{ color:white; }
 footer a:hover { color:white; }
 
