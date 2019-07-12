@@ -1,5 +1,7 @@
 #container { width: 548px; }
 .nav-link {
 	flex-direction: column;
+}
+h1 {
 	color: blue;
 }
