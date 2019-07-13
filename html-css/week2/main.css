@@ -25,7 +25,7 @@ time, mark, audio, video {
 }
 /* End of Reset Declaration*/
 
-#container { width:548px; }
+#container { width:548px; margin:0; }
 body { font-family:'Merriweather Sans', sans-serif; }
 main, .layer { padding:40px 40px; }
 main p { padding: 10px 0;}
@@ -74,7 +74,7 @@ img { height:500px; width:1200px; }
 li { padding-right:40px; }
 #about { position:relative; width:1100px; margin:auto; }
 #practical { float:right; width:640px; }
-#industry { left:0; width:360px; margin-right:100px;	margin:50px 0; }
+#industry { left:0; width:360px; margin-right:100px; margin:50px 0; }
 #our-services {
 	display: flex;
 	width: 1100px;
