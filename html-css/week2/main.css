@@ -106,6 +106,7 @@ footer { padding:20px; }
 #our-office p, .footer-nav li { margin:0;}
 #our-office div{ width:300px; margin-right:60px; }
 .footer-nav { width:250px; }
+.footer-nav li:hover { margin-left:20px; }
 .loc-map { width:250px; height:250px; margin:0; }
 }
 
