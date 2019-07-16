@@ -13,7 +13,7 @@
 	<body>
 		<div id="container">
 			<header>
-				<img id="company-logo" src="company-logo.png" alt="company logo">
+				<img id="company-logo" src="company-logo.jpg" alt="company logo">
 				<div id="step-header">
 					<a href="index.html"><div class="step current-step-separator"></div></a>
 					<div class="step-separator"></div>
@@ -24,11 +24,11 @@
 					<a href="step4.html"><div class="step"></div></a>
 				</div>
 				<nav>
-					<ul id="nav-link">
-						<li class="current-step">Your info</li>
-						<li>Contact</li>
-						<li>Preferences</li>
-						<li>Payment</li>
+					<ul id="nav-link">					
+						<li class="current-step"><a href="index.html">Your info</a><div class="step-hidden current"></div></li>
+						<li><a href="step2.html">Contact</a><div class="step-hidden"></div></li>		
+						<li><a href="step3.html">Preferences</a><div class="step-hidden"></div></li>
+						<li><a href="step4.html">Payment</a><div class="step-hidden"></div></li>
 					</ul>
 				</nav>
 			</header>
@@ -49,33 +49,33 @@
 					</ul>
 				</div>
 				<p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:
-				<form action="#" validate>
+				<form action="step2.html">
 					<div id="main-box">
 						<div class="wrap-div">
 							<label for="fname">First name*</label>
 								<input id="fname" type="text" name="fname" required autofocus>
 							<label for="lname">Last name*</label>
-								<input id="lname" type="text" name="lname" required autofocus>
+								<input id="lname" type="text" name="lname" required>
 						</div>
 						<label for="dropdown">Country*<br></label>
-							<select id="dropdown" name="country" required autofocus>
-								<option value=""></option>
+							<select id="dropdown" name="country" required>
+								<option value="">Select an option</option>
 								<option value="denmark">Denmark</option>
 								<option value="philippines">Philippines</option>
 								<option value="spain">Spain</option>
 							</select>
 						<div class="wrap-div">	
 							<label for="address">Street address*</label>
-								<input id="address" type="text" name="address" required autofocus>
+								<input id="address" type="text" name="address" required>
 							<label for="post-code">Post code*</label>
-								<input id="post-code" type="number" name="post-code" style=" margin-right:300px" min="1111" max="9999" required autofocus>
+								<input id="post-code" type="text" name="post-code" style="margin-right:300px" inputmode="numeric" minlength="4" size="4" required>
 						</div>
 						<div class="description-div">
 							<div>
 								<p><strong>Profile description</strong></p>
 								<p><em>Please provide a short description of yourself to be displayed on our social community pages</em></p>
 							</div>
-							<textarea></textarea>	
+							<textarea maxlength="500" ></textarea>	
 						</div>				
 					</div>	
 					<p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
@@ -85,27 +85,27 @@
 					<div id="hidden-box">
 						<h3><strong>Shipping Address</strong></h3><br>
 						<div class="wrap-div">
-							<label for="fname">First name*</label>
-								<input id="fname" type="text" name="fname" required autofocus>
-							<label for="lname">Last name*</label>
-								<input id="lname" type="text" name="lname" required autofocus>
+							<label for="shipping-fname">First name*</label>
+								<input id="shipping-fname" type="text" name="shipping-fname">
+							<label for="shipping-lname">Last name*</label>
+								<input id="shipping-lname" type="text" name="shipping-lname">
 						</div>
-						<label for="dropdown">Country*<br></label>
-							<select id="dropdown" name="country" required autofocus>
-								<option value=""></option>
+						<label for="shipping-dropdown">Country*<br></label>
+							<select id="shipping-dropdown" name="country">
+								<option value="">Select an option</option>
 								<option value="denmark">Denmark</option>
 								<option value="philippines">Philippines</option>
 								<option value="spain">Spain</option>
 							</select>
 						<div class="wrap-div">	
-							<label for="address">Street address*</label>
-								<input id="address" type="text" name="address" required autofocus>
-							<label for="post-code">Post code*</label>
-								<input id="post-code" type="number" name="post-code" style=" margin-right:300px" min="1111" max="9999" required autofocus>
+							<label for="shipping-address">Street address*</label>
+								<input id="shipping-address" type="text" name="shipping-address">
+							<label for="shipping-post-code">Post code*</label>
+								<input id="shipping-post-code" type="text" name="shipping-post-code" style=" margin-right:300px" inputmode="numeric" minlength="4" size="4">
 						</div>
 					</div>
 					<div id="btn-div">
-						<button id="submit" type="submit"><a href="step2.html">next step</a></button>
+						<input id="submit" type="submit" value="Next step">
 					</div>
 				</form>
 			</main>

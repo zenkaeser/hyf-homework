@@ -10,10 +10,11 @@
     <link rel="stylesheet" media="screen and (min-width: 700px)" href="main.css"> 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap"> 
   </head> 
+
 	<body>
 		<div id="container">
 			<header>
-				<img id="company-logo" src="company-logo.png" alt="company logo">
+				<img id="company-logo" src="company-logo.jpg" alt="company logo">
 				<div id="step-header">
 					<a href="index.html"><div class="step current-step-separator"></div></a>
 					<div class="step-separator"></div>
@@ -24,11 +25,11 @@
 					<a href="step4.html"><div class="step"></div></a>
 				</div>
 				<nav>
-					<ul id="nav-link">
-						<li class="current-step"><a href="index.html">Your info</a></li>
-						<li class="current-step"><a href="step2.html">Contact</a></li>
-						<li><a href="step3.html">Preferences</a></li>
-						<li><a href="step4.html">Payment</a></li>
+					<ul id="nav-link">					
+						<li class="current-step"><a href="index.html">Your info</a><div class="step-hidden current"></div></li>
+						<li class="current-step"><a href="step2.html">Contact</a><div class="step-hidden current"></div></li>		
+						<li><a href="step3.html">Preferences</a><div class="step-hidden"></div></li>
+						<li><a href="step4.html">Payment</a><div class="step-hidden"></div></li>
 					</ul>
 				</nav>
 			</header>
@@ -46,21 +47,23 @@
 					</ul>
 				</div>
 				<p>We will probably need to stay in touch somehow. Let us know how we can reach you?</p>
-				<form action="#" validate>
+				<form action="step3.html">
 					<div id="main-box">
 						<div class="wrap-div">
 							<label for="email">Email*</label>
 								<input id="email" type="email" name="email" required autofocus>
 							<label for="phone">Phone*</label>
-								<input id="phone" type="number" name="phone" min="1111111" max="9999999" required>			
+								<input id="phone" type="number" name="phone" min="11111111" max="99999999" required>			
 						</div>	
 						<div class="wrap-div">
 							<label for="password">Password*</label>
-								<input id="password" type="password" name="password" required>	
+								<input id="password" type="password" name="password" pattern="(?=^.{10,}$)(?=.*[A-Z])(?=.*[a-z]).*$" required>	
+								<span class="pass-error">Minimum 10 characters, uppercase and lowercase letters</span>
 						</div>
 						<div class="wrap-div">
 							<label for="re-password">Re-enter Password*</label>
-								<input id="re-password" type="password" name="re-password" required>	
+								<input id="re-password" type="password" autocomplete="current-password" name="re-password" required>	
+								<span class="pass-error">Must be the same with the above password</span>
 						</div>
 					</div>
 					<p>I want to sign up for the newsletter</p>			
@@ -73,7 +76,7 @@
 							<input id="dont-send-news" class="box" type="radio" name="news" value="dont-send-news">
 					</div>			
 					<div id="btn-div">
-						<button id="submit" type="submit"><a href="step3.html">next step</a></button>
+						<input id="submit" type="submit" value="Next step">
 					</div>
 				</form>
 			</main>

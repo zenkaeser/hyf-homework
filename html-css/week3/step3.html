@@ -13,7 +13,7 @@
 	<body>
 		<div id="container">
 			<header>
-				<img id="company-logo" src="company-logo.png" alt="company logo">
+				<img id="company-logo" src="company-logo.jpg" alt="company logo">
 				<div id="step-header">
 					<a href="index.html"><div class="step current-step-separator"></div></a>
 					<div class="step-separator"></div>
@@ -24,11 +24,11 @@
 					<a href="step4.html"><div class="step"></div></a>
 				</div>
 				<nav>
-					<ul id="nav-link">
-						<li class="current-step"><a href="index.html">Your info</a></li>
-						<li class="current-step"><a href="step2.html">Contact</a></li>
-						<li class="current-step"><a href="step3.html">Preferences</a></li>
-						<li><a href="step4.html">Payment</a></li>
+					<ul id="nav-link">					
+						<li class="current-step"><a href="index.html">Your info</a><div class="step-hidden current"></div></li>
+						<li class="current-step"><a href="step2.html">Contact</a><div class="step-hidden current"></div></li>		
+						<li class="current-step"><a href="step3.html">Preferences</a><div class="step-hidden current"></div></li>
+						<li><a href="step4.html">Payment</a><div class="step-hidden"></div></li>
 					</ul>
 				</nav>
 			</header>
@@ -46,31 +46,30 @@
 					</ul>
 				</div>
 				<p>What kind of items are you interested in offers on?</p>
-				<form action="#">
+				<form action="step4.html">
 					<div class="preferences-div">
 						<div>
-							<input id="apparel" class="box2" type="checkbox" name="apparel" value="apparel">
+							<input id="apparel" class="box2" type="checkbox" name="preferences" value="apparel">
 							<img src="media/apparel.png" alt="apparel-icon" class="icon">
 							<label for="apparel">Apparel</label>
-							
 						</div>
 						<div>
-							<input id="accessories" class="box2" type="checkbox" name="accessories" value="accessories">	
+							<input id="accessories" class="box2" type="checkbox" name="preferences" value="accessories">	
 							<img src="media/accessories.png" alt="accessories-icon" class="icon">
 							<label for="accessories">Accessories</label>
 						</div>
 						<div>
-							<input id="handbags" class="box2" type="checkbox" name="handbags" value="handbags">
+							<input id="handbags" class="box2" type="checkbox" name="preferences" value="handbags">
 							<img src="media/handbag.png" alt="handbags-icon" class="icon">
 							<label for="handbags">Handbags</label>	
 						</div>
 						<div>
-							<input id="jewelry" class="box2" type="checkbox" name="jewelry" value="jewelry">
+							<input id="jewelry" class="box2" type="checkbox" name="preferences" value="jewelry">
 							<img src="media/jewelry.png" alt="jewelry-icon" class="icon">
 							<label for="jewelry">Jewelry</label>
 						</div>
 						<div>
-							<input id="shoes" class="box2" type="checkbox" name="shoes" value="shoes">		
+							<input id="shoes" class="box2" type="checkbox" name="preferences" value="shoes">		
 							<img src="media/shoes.png" alt="shoes-icon" class="icon">	
 							<label for="shoes">Shoes</label>
 						</div>
@@ -80,46 +79,46 @@
 						<div>
 							<img src="media/item1.png" alt="item" class="item">
 							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<input id="item1" class="box" type="checkbox" name="item" value="item1">
 						</div>
 						<div>	
 							<img src="media/item2.png" alt="item" class="item">	
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item2"><br>select</label>
+							<input id="item2" class="box" type="checkbox" name="item" value="item2">
 						</div>
 						<div>
 							<img src="media/item3.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item3"><br>select</label>
+							<input id="item3" class="box" type="checkbox" name="item" value="item3">
 						</div>
 						<div>
 							<img src="media/item4.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item4"><br>select</label>
+							<input id="item4" class="box" type="checkbox" name="item" value="item4">
 						</div>
 						<div>
 							<img src="media/item5.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item5"><br>select</label>
+							<input id="item5" class="box" type="checkbox" name="item" value="item5">
 						</div>
 						<div>
 							<img src="media/item6.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item6"><br>select</label>
+							<input id="item6" class="box" type="checkbox" name="item" value="item6">
 						</div>
 						<div>
 							<img src="media/item7.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item7"><br>select</label>
+							<input id="item7" class="box" type="checkbox" name="item" value="item7">
 						</div>
 						<div>
 							<img src="media/item8.png" alt="item" class="item">
-							<label for="item1"><br>select</label>
-							<input id="item1" class="box" type="checkbox" name="item1" value="item1">
+							<label for="item8"><br>select</label>
+							<input id="item8" class="box" type="checkbox" name="item" value="item8">
 						</div>			
 					</div>
 					<div id="btn-div">
-						<button id="submit" type="submit"><a href="step4.html">next step</a></button>
+						<input id="submit" type="submit" value="Next step">
 					</div>
 				</form>
 			</main>
