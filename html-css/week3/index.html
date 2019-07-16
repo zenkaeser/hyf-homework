@@ -1,0 +1,115 @@
+<!--HTML for Week 3 Homework--> 
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <title>Week2 Homework-Web Development as an Industry</title> 
+    <meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="mobile.css"> 
+    <link rel="stylesheet" media="screen and (min-width: 700px)" href="main.css"> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap"> 
+  </head> 
+	<body>
+		<div id="container">
+			<header>
+				<img id="company-logo" src="company-logo.png" alt="company logo">
+				<div id="step-header">
+					<a href="index.html"><div class="step current-step-separator"></div></a>
+					<div class="step-separator"></div>
+					<a href="step2.html"><div class="step"></div></a>
+					<div class="step-separator"></div>
+					<a href="step3.html"><div class="step"></div></a>
+					<div class="step-separator"></div>
+					<a href="step4.html"><div class="step"></div></a>
+				</div>
+				<nav>
+					<ul id="nav-link">
+						<li class="current-step">Your info</li>
+						<li>Contact</li>
+						<li>Preferences</li>
+						<li>Payment</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<h1>Sign up to yourcustomtailor.com</h1>
+				<p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+				<p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about you first...</p>
+				
+				<h2>Step 1/4 - tell us who you are?</h2>
+				<p>Progress</p>
+				<div class="progress-bar">
+					<ul>
+						<li class="init-prog-bar"></li>
+						<li class="prog-bar"></li>
+						<li class="prog-bar"></li>
+						<li class="prog-bar"></li>
+						<li class="last-prog-bar"></li>
+					</ul>
+				</div>
+				<p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following:
+				<form action="#" validate>
+					<div id="main-box">
+						<div class="wrap-div">
+							<label for="fname">First name*</label>
+								<input id="fname" type="text" name="fname" required autofocus>
+							<label for="lname">Last name*</label>
+								<input id="lname" type="text" name="lname" required autofocus>
+						</div>
+						<label for="dropdown">Country*<br></label>
+							<select id="dropdown" name="country" required autofocus>
+								<option value=""></option>
+								<option value="denmark">Denmark</option>
+								<option value="philippines">Philippines</option>
+								<option value="spain">Spain</option>
+							</select>
+						<div class="wrap-div">	
+							<label for="address">Street address*</label>
+								<input id="address" type="text" name="address" required autofocus>
+							<label for="post-code">Post code*</label>
+								<input id="post-code" type="number" name="post-code" style=" margin-right:300px" min="1111" max="9999" required autofocus>
+						</div>
+						<div class="description-div">
+							<div>
+								<p><strong>Profile description</strong></p>
+								<p><em>Please provide a short description of yourself to be displayed on our social community pages</em></p>
+							</div>
+							<textarea></textarea>	
+						</div>				
+					</div>	
+					<p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+					<label for="shipping-addr" class="shipbox">Shipping Address</label>
+						<input id="shipping-addr" class="box" type="checkbox" name="shipping-addr" value="shipping-address" checked>
+
+					<div id="hidden-box">
+						<h3><strong>Shipping Address</strong></h3><br>
+						<div class="wrap-div">
+							<label for="fname">First name*</label>
+								<input id="fname" type="text" name="fname" required autofocus>
+							<label for="lname">Last name*</label>
+								<input id="lname" type="text" name="lname" required autofocus>
+						</div>
+						<label for="dropdown">Country*<br></label>
+							<select id="dropdown" name="country" required autofocus>
+								<option value=""></option>
+								<option value="denmark">Denmark</option>
+								<option value="philippines">Philippines</option>
+								<option value="spain">Spain</option>
+							</select>
+						<div class="wrap-div">	
+							<label for="address">Street address*</label>
+								<input id="address" type="text" name="address" required autofocus>
+							<label for="post-code">Post code*</label>
+								<input id="post-code" type="number" name="post-code" style=" margin-right:300px" min="1111" max="9999" required autofocus>
+						</div>
+					</div>
+					<div id="btn-div">
+						<button id="submit" type="submit"><a href="step2.html">next step</a></button>
+					</div>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>
+	 

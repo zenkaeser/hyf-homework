@@ -1,0 +1,83 @@
+<!--HTML for Week 3 Homework--> 
+ 
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <title>Week2 Homework-Web Development as an Industry</title> 
+    <meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="mobile.css"> 
+    <link rel="stylesheet" media="screen and (min-width: 700px)" href="main.css"> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap"> 
+  </head> 
+	<body>
+		<div id="container">
+			<header>
+				<img id="company-logo" src="company-logo.png" alt="company logo">
+				<div id="step-header">
+					<a href="index.html"><div class="step current-step-separator"></div></a>
+					<div class="step-separator"></div>
+					<a href="step2.html"><div class="step current-step-separator"></div></a>
+					<div class="step-separator"></div>
+					<a href="step3.html"><div class="step"></div></a>
+					<div class="step-separator"></div>
+					<a href="step4.html"><div class="step"></div></a>
+				</div>
+				<nav>
+					<ul id="nav-link">
+						<li class="current-step"><a href="index.html">Your info</a></li>
+						<li class="current-step"><a href="step2.html">Contact</a></li>
+						<li><a href="step3.html">Preferences</a></li>
+						<li><a href="step4.html">Payment</a></li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<h1>Sign up to yourcustomtailor.com</h1>		
+				<h2>Step 2/4 - how we can reach you?</h2>
+				<p>Progress</p>
+				<div class="progress-bar">
+					<ul>
+						<li class="init-prog-bar"></li>
+						<li class="current-prog-bar"></li>
+						<li class="prog-bar"></li>
+						<li class="prog-bar"></li>
+						<li class="last-prog-bar"></li>
+					</ul>
+				</div>
+				<p>We will probably need to stay in touch somehow. Let us know how we can reach you?</p>
+				<form action="#" validate>
+					<div id="main-box">
+						<div class="wrap-div">
+							<label for="email">Email*</label>
+								<input id="email" type="email" name="email" required autofocus>
+							<label for="phone">Phone*</label>
+								<input id="phone" type="number" name="phone" min="1111111" max="9999999" required>			
+						</div>	
+						<div class="wrap-div">
+							<label for="password">Password*</label>
+								<input id="password" type="password" name="password" required>	
+						</div>
+						<div class="wrap-div">
+							<label for="re-password">Re-enter Password*</label>
+								<input id="re-password" type="password" name="re-password" required>	
+						</div>
+					</div>
+					<p>I want to sign up for the newsletter</p>			
+					<div class="newsletter-div">
+						<label for="weekly-news">Weekly news</label>
+							<input id="weekly-news" class="box" type="radio" name="news" value="weekly-news" checked>
+						<label for="monthly-news">Monthly news</label>
+							<input id="monthly-news" class="box" type="radio" name="news" value="monthly-news">
+						<label for="dont-send-news">Dont's send me news</label>
+							<input id="dont-send-news" class="box" type="radio" name="news" value="dont-send-news">
+					</div>			
+					<div id="btn-div">
+						<button id="submit" type="submit"><a href="step3.html">next step</a></button>
+					</div>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>
+	 

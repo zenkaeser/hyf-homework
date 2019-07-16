@@ -1,0 +1,138 @@
+/*CSS for Week 3 Homework*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* End of Reset Declaration*/
+
+#container { width:1000px; margin:auto; padding:40px; padding-bottom:100px; }
+body { background-color:#eee; }
+main { background-color:white; padding: 40px;  border-radius:3px; }
+header { margin:auto; display:flex; flex-direction:column; align-items:center; }
+#company-logo { width:400px; margin:20px; }
+a { text-decoration:none; color:black; }
+#step-header { display:flex; margin-top:20px; }
+.step { 
+	width: 30px;
+	height: 30px; 
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 50%;
+}
+.current-step{ font-weight:700; }
+.step-separator { border-bottom:1px solid black; width:130px; margin-bottom:15px; }
+.current-step-separator { background-color:black; }
+#nav-link { display:flex; }
+#nav-link li { padding:10px 50px 70px; margin:0; }
+li { list-style:none }
+h1, h2{ margin:25px 0;}
+p { margin:15px 0; color:#666; }
+.progress-bar { 
+	width: 100%; 
+	height: 20px; 
+	border:1px solid black; 
+	margin-top:-8px;
+}
+.progress-bar ul { display:flex;padding:1px; }
+.init-prog-bar { background-color:black; width:10vw; height:18px; }
+.current-prog-bar { 
+	background-color: black; 
+	width: 20vw; 
+	height: 18px; 
+	border-left: 1px solid #ccc;
+}
+.prog-bar { background-color:#eee; width:20vw; height:18px; border-left:2px solid #ccc; }
+.last-prog-bar { background-color:#eee; width:10vw; height:18px; border-left:2px solid #ccc; }
+#main-box { padding: 50px 0; padding-bottom: 50px; }
+select { width:414px; height:35px; padding-left:10px; margin:5px 0 25px; }
+textarea { width:70vw; height:200px; padding:10px; margin:10px;}
+.wrap-div{ column-count:2; }
+label { font-weight:700; }
+input { width:400px; height:35px; padding-left:10px; margin:5px 12% 25px 0; }
+.description-div { display:flex;  margin-top:70px;  }
+.description-div p { width:200px; }
+.shipbox { vertical-align:top;}
+.box { width:25px; height:20px; margin:0; margin-left:10px; }
+#hidden-box { margin-top:50px; }
+#btn-div { text-align:right; margin:50px 0;}
+button { 
+	width: 150px;
+	height: 60px;
+	border-radius: 5px;
+}
+/* Toggled State */
+input[type=checkbox]:checked ~ #hidden-box{
+   display: none;
+}
+
+/*step2 styles*/
+.newsletter-div { display:flex; }
+.newsletter-div input{ margin:0px 70px 0 10px; border-radius: 0px;}
+/*end...*/
+
+/*step3 styles*/
+.preferences-div { 
+	width: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 100px;
+	margin: 50px 0;
+}
+.preferences-div div { width:220px; }
+.icon { width:20px; height:20px; padding-left:15px; padding-right:3px; }
+.preferences-div label{ vertical-align:3px; }
+.items-div { display:flex; text-align:right; flex-wrap:wrap;}
+.item { width: 200px; border: 2px solid #ccc; border-radius:5px; }
+.items-div div { margin: 10px; }
+.items-div div label{ vertical-align:top; font-weight:400; }
+.box2 { width:15px; height:15px; margin:0; margin-left:10px; }
+/*end...*/
+
+/*step4 styles*/
+.payment-main-box  { display:flex; justify-content:center; }
+.sub-main-box {
+	display:flex;
+	flex-direction:column;
+	border: 1px solid #ccc;
+	padding: 40px;
+	border-radius: 3px;
+}
+#exp-month, #exp-year, #post-code { width:170px; }
+#ccv { width:50px; }
+.sub-main-box .wrap-div { width: 420px; }
+/*end...*/
+
+/*last step styles*/
+.final-step-main-box { height:500px; text-align:center; }
+.final-step-main-box img{ width: 150px; margin-top: 50px;}
+.jk p{ display:none;}
+.jk:hover p { display:block}
+/*end...*/
+
+
+
+
+
+
+
+
