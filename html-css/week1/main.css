@@ -46,6 +46,7 @@ li { list-style:none; }
   background-color: #dedede;
   padding: 10px 60px;
   justify-content: space-around;
+  flex-direction:row;
 }
 #contact ul li { padding:0 20px; display:flex; align-items:center; }
 #sub-main { display:flex; margin: 50px; }
