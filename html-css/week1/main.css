@@ -43,13 +43,13 @@ li { list-style:none; }
 .icon { width:15px; margin:0 15px; }
 #contact ul {
   display: flex;
+	flex-direction: row;
   background-color: #dedede;
   padding: 10px 60px;
   justify-content: space-around;
-  flex-direction:row;
 }
 #contact ul li { padding:0 20px; display:flex; align-items:center; }
-#sub-main { display:flex; margin: 50px; }
+#sub-main { display:flex; flex-direction:row; margin: 50px; }
 #work-desc { color:#888; }
 p, li{ font-size:15px; }
 a { text-decoration:none; color:black; }
