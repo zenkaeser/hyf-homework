@@ -24,3 +24,23 @@ if(shouldShowResultInDogYears) {
 }
 else 
   console.log(str);
+
+
+
+//Housey pricey (A house price estimator)
+var gardenSizeInM2 = 100;
+var width = 5;
+var height = 11;
+var depth = 8;
+var volumeInMeters = width * height * depth;
+var estHousePrice = 1000000
+
+var housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+
+console.log("How much the house should cost:" + housePrice);
+
+if(housePrice > estHousePrice) {
+    console.log("You are paying too little. Congrats!")
+}else {
+    console.log("You are paying too much.")
+}
