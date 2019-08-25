@@ -44,3 +44,15 @@ if(housePrice > estHousePrice) {
 }else {
     console.log("You are paying too much.")
 }
+
+
+
+//Ex Namey (Startup name generator)
+var firstWords = ['Easy', 'Awesome', 'Corporate', 'Cool', 'First', 'Pretty', 'Lorem', 'Ipsum', 'Text', 'Grata'];
+var secondWords = ['Tide', 'Camera', 'Project', 'Lightning', 'Thunder', 'Blackbird', 'Zorro', 'Punch', 'Detective', 'Wave'];
+
+const randomNumber = Math.floor(Math.random() * 10) + 0;
+var startUpName = firstWords[randomNumber] + ' ' + secondWords[randomNumber];
+
+console.log("The startup: " + startUpName + " contains " + startUpName.length + " letters");
+
