@@ -1,4 +1,5 @@
 console.log("\n-- Student Manager --");
+console.log("Add your student(s) here: ");
 
 const class07Students = ["kat", "love", "jessa", "james", "kim", "ben"];
 
