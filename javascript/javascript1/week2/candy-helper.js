@@ -10,7 +10,7 @@ console.log("  Chewing-gum  ||   0.03 ");
 let boughtCandyPrices = [];
 
 function addCandy(candyType, weight) {
-  let price;
+  let price = 0;
   let type = candyType.toLowerCase();
   
   switch (type) {
@@ -19,26 +19,25 @@ function addCandy(candyType, weight) {
     case "toffee": price = 1.1 * weight; break;
     case "chewing-gum": price = 0.03; break;
     default: {
-      price = 0; 
-      console.log("Candy Type not recognized.");
+      console.log("Candy Type not recognized. Price is " + price);
     }
   }
   if(price > 0) {
     boughtCandyPrices.push(price);
   }
-  return price;
+  return "Sub-total: " + price;
 }
 
 function canBuyMoreCandy() {
   let amountToSpend = Math.ceil(Math.random() * 100);
   let totalPrice = 0;
-  let flag = true;
 
   console.log("You have " + amountToSpend + "kr amount to spend.");
 
   for(var x=0; x<boughtCandyPrices.length; x++) {
     totalPrice += boughtCandyPrices[x];
   }
+  console.log("Total price for candies " + totalPrice + " kr.");
   if(totalPrice >= amountToSpend) {
     console.log("Enough candy for you!")
     return false;
