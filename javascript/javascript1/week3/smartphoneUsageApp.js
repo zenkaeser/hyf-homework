@@ -1,7 +1,7 @@
 const activities = [];
 const limit = 1000;     //number in minutes
 const today = new Date();
-let date = today.toLocaleDateString("en-US")
+const date = today.toLocaleDateString("en-US")
 
 function addActivity(date, activity, duration) {
   activities.push({date, activity, duration});
@@ -26,6 +26,10 @@ function showStatus(activities) {
   }
 
   return "You have added " +totalActivities+ " activities for the day. They amount to " +totalDuration+ " min." + str;
+}
+
+function calculateMostSpentActivity() {
+  
 }
 
 addActivity('23/7-18', 'Youtube', 30);

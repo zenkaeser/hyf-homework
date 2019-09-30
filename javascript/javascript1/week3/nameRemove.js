@@ -6,11 +6,7 @@ function removeNameOnArray(nameToRemove) {
   let i=0
   if(nameToRemove != undefined) {
     for(; i<names.length; i++) {
-      if(nameToRemove === names[i]) {
-        console.log(names[i],i)
-        break;
-        
-      }
+      if(nameToRemove === names[i]) break;  //if name is found, the loop is force stop
     }
     for(let j=i;j<names.length-1;j++) {
       names[j] = names[j+1];

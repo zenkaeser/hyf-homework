@@ -65,9 +65,9 @@ function addSongToMyPlaylist(songTitle) {
     for(let i=0; i<myPlaylist.length; i++) {
       if(myPlaylist[i].playlistName === playlistName) {
         for(let s of song) {
-          myPlaylist[i].Songs.push(s);
+           myPlaylist[i].Songs.push(s);
         }
-        return;
+        return;      //the return statement stops the function after adding all the songs to the playlist.
       }
     }
     myPlaylist.push({
@@ -79,6 +79,7 @@ function addSongToMyPlaylist(songTitle) {
     alert("Cannot add that song on the playlist");
 }
 
+//this function returns the array of songs that matches the given keyword
 function getSongByTitle(songTitle) {
   let search = [];
   if(songTitle !== undefined && songTitle != "") { 
@@ -95,15 +96,13 @@ function getSongByTitle(songTitle) {
 }
 
 
-
-//console.log(songDatabase);
 addSongToDatabase(newSong);   //adding the new song on the database
 
 const searchedSong = getSongByTitle('When is enough too little?');
-//console.log(searchedSong); // returns { songId: 4, title: 'When is enough too little', artist: 'The spies girls'}
+console.log(searchedSong); // returns { songId: 4, title: 'When is enough too little', artist: 'The spies girls'}
 
 const searchedSong2 = getSongByTitle('When is enough too');
-//console.log(searchedSong2); // returns { songId: 4, title: 'When is enough too little', artist: 'The spies girls'} because this utilizes fuzzy search.
+console.log(searchedSong2); // returns { songId: 4, title: 'When is enough too little', artist: 'The spies girls'} because this utilizes fuzzy search.
 
 alert("Enter playlist name");
 addSongToMyPlaylist('3 nails in wood');  //adds the 2 songs that contains 2 nails in wood on the title
