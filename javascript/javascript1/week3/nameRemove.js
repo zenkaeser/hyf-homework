@@ -17,6 +17,16 @@ function removeNameOnArray(nameToRemove) {
     console.log("Please enter a  name on the array list")
   }
 }
+
+
+//shortcut version of removing array element
+function removeNameOnArray2(nameToRemove) {
+  let pos = names.indexOf(nameToRemove);
+  if(pos >= 0) 
+    names.splice(pos,1);
+  else
+    return "Name not found on the list";
+}
 // Code done
 removeNameOnArray(nameToRemove);
 console.log(names); // ['Peter', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'katrine', 'Tala']
