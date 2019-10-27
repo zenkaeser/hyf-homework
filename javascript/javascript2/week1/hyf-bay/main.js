@@ -6,77 +6,59 @@ const testProductNames = [{
   shipsTo: [ 'denmark', 'germany'],
 },
 {
-  id:1,
+  id:2,
   name:"Toothpaste",
   price: 50,
   rating: 4.8,
   shipsTo: [ 'denmark', 'sweden'],
 },
 {
-  id:1,
+  id:3,
   name:"Soap",
   price: 100,
   rating: 5,
   shipsTo: [ 'denmark', 'amsterdam']
 }];
 
-let productListing = document.querySelector('ul');
+let productListing = document.querySelector('.productListing');
 
 function renderProducts(testProductNames) {
-  for(let item in testProductNames) {
-    let li = document.createElement('li'); 
-    productListing.appendChild(li);
+  for(let item of testProductNames) {
+    let listOfItems = document.createElement('li'); 
+    productListing.appendChild(listOfItems);
     let ul = document.createElement('ul'); 
-    li.appendChild(ul);
+    listOfItems.appendChild(ul);
 
-    let productDetails = testProductNames[item];
+    let name = document.createElement('li');
+    name.classList.add('name');
+    name.innerHTML = item.name;
+    let price = document.createElement('li');
+    price.classList.add('price');
+    price.innerHTML = item.price;
+    let rating = document.createElement('li');
+    rating.classList.add('rating');
+    rating.innerHTML = item.rating;
+    let shipsTo = document.createElement('li');
+    shipsTo.classList.add('ships-to');
 
-    console.log(productDetails);
-    for(let value in productDetails) {
-      let detail = productDetails[value]; 
-      let li = document.createElement('li');
-      li.classList.add(value);
-      li.setAttribute("style", "list-style: none;");
-      
-      if(value === 'shipsTo') { 
-        console.log(value);
-        let shipsToUl = document.createElement('ul'); 
-        li.appendChild(shipsToUl);
-        console.log(li);
-
-        for(let country in detail) {
-          let li3 = document.createElement('li'); 
-          li3.innerText = detail[country];
-          shipsToUl.appendChild(li3);
-          console.log(detail[country]);
-        }
-        ul.appendChild(li);
-        break;
-      }
-      
-      console.log(value);
-
-      li.innerText = detail;
-      li.setAttribute("style", "list-style: none;");
-      ul.appendChild(li);
-    }
+    let shipsToUl = document.createElement('ul'); 
+    shipsTo.appendChild(shipsToUl);
     
-    /*
-    li.innerHTML = testProductNames[item].name+
-       " | " +
-       testProductNames[item].price+
-       " | " + 
-       testProductNames[item].rating+
-       " | " +
-       testProductNames[item].shipsTo;
-    */
-    //ul.appendChild(li);
+    let country = item.shipsTo;
+    for(let i=0; i<country.length; i++) { 
+      let countryList = document.createElement('li'); 
+      countryList.innerText = country[i];
+      shipsToUl.appendChild(countryList);
+    }
+    ul.appendChild(name);
+    ul.appendChild(price);
+    ul.appendChild(rating);
+    ul.appendChild(shipsTo);
   }
 }
 
 const products = getAvailableProducts();
 renderProducts(products);
-console.log(products);
 
 function getAvailableProducts() {
   return testProductNames;
