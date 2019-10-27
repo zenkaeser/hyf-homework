@@ -1,7 +1,7 @@
 // use the functions on this array
 const housePrices = [3000000, 3500000, 1300000, 40000000, 100000000, 8000000, 2100000, 1];
 
-function getAve() {
+function getAve(housePrices) {
   let total = count = 0;
   for(let value of housePrices) {
     total += value;
@@ -9,28 +9,26 @@ function getAve() {
   }
   return total/count;
 }
-function getMedian() {
+function getMedian(housePrices) {
   const sortedArray = housePrices.sort(function(a, b){return a-b});
   let mid = Math.floor(sortedArray.length/2);
   let median = function(){
-    if(mid%2 == 0) {
-      let mean =  (sortedArray[mid] + sortedArray[mid-1]) / 2
-      return mean;
+    if(sortedArray.length % 2 == 0) {
+      return (sortedArray[mid] + sortedArray[mid-1]) / 2
     }
     return sortedArray[mid];
   }
-
   return median();
 }
 function getBoth() {
   const object = {
-    ave: getAve() ,
-    median: getMedian()
+    ave: getAve(housePrices) ,
+    median: getMedian(housePrices)
 
-  } ;
+  };
   return object;
 }
 
 
-console.log(getAve());
-console.log(getMedian());
+console.log(getAve(housePrices));
+console.log(getMedian(housePrices));

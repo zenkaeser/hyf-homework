@@ -2,20 +2,12 @@ let danishWords = ['bil', 'plante', 'kaffe', 'bog', 'ø', 'planetarium'];
 let show = shortestWord(danishWords); // returns 'ø'
 
 function shortestWord(danishWords) {
-
-  let shortestWord;
-  let initlength = function() {
-    if (danishWords!== undefined)
-     return danishWords[0].length;
-   };
-   let sLength = initlength();
+  let shortest = danishWords[0];
   for(let i of danishWords) {
-    if(sLength > i.length ) {
-      sLength = i.length;
-      shortestWord = i;
+    if(shortest.length > i.length ) {
+      shortest = i;
     }
   }
-  return shortestWord;
+  return shortest;
 } 
-
 console.log(show);
