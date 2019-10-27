@@ -12,13 +12,11 @@ function getAve(housePrices) {
 function getMedian(housePrices) {
   const sortedArray = housePrices.sort(function(a, b){return a-b});
   let mid = Math.floor(sortedArray.length/2);
-  let median = function(){
-    if(sortedArray.length % 2 == 0) {
-      return (sortedArray[mid] + sortedArray[mid-1]) / 2
-    }
-    return sortedArray[mid];
+
+  if(sortedArray.length % 2 == 0) {
+    return (sortedArray[mid] + sortedArray[mid-1]) / 2
   }
-  return median();
+  return sortedArray[mid];
 }
 function getBoth() {
   const object = {

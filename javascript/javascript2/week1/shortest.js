@@ -3,9 +3,9 @@ let show = shortestWord(danishWords); // returns 'ø'
 
 function shortestWord(danishWords) {
   let shortest = danishWords[0];
-  for(let i of danishWords) {
-    if(shortest.length > i.length ) {
-      shortest = i;
+  for(let item of danishWords) {
+    if(shortest.length > item.length ) {
+      shortest = item;
     }
   }
   return shortest;

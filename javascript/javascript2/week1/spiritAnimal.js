@@ -10,28 +10,28 @@ const spiritAnimal = ["cat", "bat", "dog", "lizard", "hippos", "rabbit", "snake"
 select.addEventListener('change', function() { 
   var x = document.getElementById("mySelect").value;
   if(x == 'click') {
-      go.addEventListener('click', myFunction); 
-      name.removeEventListener("keyup", myFunction, false);
-      name.removeEventListener("mouseover", myFunction, false);
+      go.addEventListener('click', getNewSpiritAnimal); 
+      name.removeEventListener("keyup", getNewSpiritAnimal);
+      name.removeEventListener("mouseover", getNewSpiritAnimal);
   }
   else if (x == 'mouseover') {
-      name.addEventListener("mouseover", myFunction, false);
-      name.removeEventListener("keyup", myFunction, false);
-      go.removeEventListener('click', myFunction); 
+      name.addEventListener("mouseover", getNewSpiritAnimal);
+      name.removeEventListener("keyup", getNewSpiritAnimal);
+      go.removeEventListener('click', getNewSpiritAnimal); 
   }
   else if (x == 'written') { 
-      name.addEventListener("keyup", myFunction, false);
-      go.removeEventListener('click', myFunction); 
-      name.removeEventListener("mouseover", myFunction, false);
+      name.addEventListener("keyup", getNewSpiritAnimal);
+      go.removeEventListener('click', getNewSpiritAnimal); 
+      name.removeEventListener("mouseover", getNewSpiritAnimal);
   }
 },false);
 
-function myFunction() {
+function getNewSpiritAnimal() {
   if(name.value) { 
-    input.value = name.value+ ":" +name.value+ "- The crying " + spiritAnimal[Math.floor((Math.random() * spiritAnimal.length-1) + 1)]; 
+    input.value = name.value+ ":" +name.value+ "- The crying " + spiritAnimal[Math.floor((Math.random() * spiritAnimal.length))]; 
   }
   else 
     input.value = "Enter your name first above";    
 }
 
-newButton.addEventListener('click', myFunction);
+newButton.addEventListener('click', getNewSpiritAnimal);
