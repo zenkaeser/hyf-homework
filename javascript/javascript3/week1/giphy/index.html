@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <style>
-      #giphyID, input {
+      body, input {
         margin: 20px auto;
         width: 250px;
         padding: 10px;
@@ -10,15 +10,24 @@
         display: block;
         background-color: lightblue;
         margin: auto;
+        padding: 10px 30px;
+      }
+      img {
+        width: 200px;
+        height: 100px;
+        border: 10px solid rgb(238, 231, 231);
+        border-radius: 3px;
+        margin: 10px 0;
       }
     </style>
   </head>
   <body>
-    <div id="giphyID">
-      <h1>Giphy Searcher</h1>
-      <input id="searchInput">
-      <button type="button">Search for gif</button>
-      <input id="displayCount">
+    <h1>Giphy Searcher</h1>
+    <input id="searchInput" placeholder="Enter gif keyword">
+    <button type="button" id="searchButton">Search for gif</button>
+    <input id="displayCount" placeholder="Number of gifs">
+    <div id="giphyDiv">
+      
     </div>
     <script type="text/javascript" src="giphy.js"></script>
   </body> 

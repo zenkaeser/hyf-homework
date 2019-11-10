@@ -6,36 +6,42 @@
 5. add an input element, where the user can specify how many gif results the user wants.
 */
 
-const div = document.getElementById('giphyID');
+const searchInput = document.querySelector('#searchInput');
+const searchButton = document.querySelector('#searchButton');
+const displayCount = document.querySelector('#displayCount');
+const giphyDiv = document.querySelector('#giphyDiv');
 
-// 2.
-/*
-fetch("https://api.giphy.com/v1/gifs/search?api_key=16FiVpIKXcot6biF6OyKiAnS10P6DRym&q=smile&limit=25&offset=0&rating=G&lang=en")
-  .then(response => response.json())
-  .then(response => {
-    
-    for(let i=0; i<response.data.length; i++) {
-      console.log(response.data[i].url);  
-      const img = document.createElement('img');
-      img.style.width = '100px';  
-      img.src = response.data[i].url;  
-      div.appendChild(img);
-    }
-  });
-  */
 
- fetch("https://api.giphy.com/v1/gifs/search?api_key=16FiVpIKXcot6biF6OyKiAnS10P6DRym&q=smile&limit=25&offset=0&rating=G&lang=en")
- .then(response => response.json())
- .then(response => {
-     console.log(1, response.data.length)
-     for (let i = 0; i < response.data.length; i++) {
-         console.log(response.data[i].url);
-     }
-     response.data.forEach(item =>{
-         console.log(item.url);
-         const img = document.createElement('img');
-      img.style.width = '100px';  
-      img.src = item.url;  
-      div.appendChild(img);
-     })
- });
+searchButton.addEventListener('click', function() { 
+
+	let value = searchInput.value;
+  let count = displayCount.value;
+  let url = `https://api.giphy.com/v1/gifs/search?api_key=16FiVpIKXcot6biF6OyKiAnS10P6DRym&q=${value}&limit=${count}&offset=0&rating=G&lang=en`;
+
+  if(value) {
+    if(count > 0) { 
+      fetchData(url);
+    } else {
+      url = `https://api.giphy.com/v1/gifs/search?api_key=16FiVpIKXcot6biF6OyKiAnS10P6DRym&q=${value}&limit=10&offset=0&rating=G&lang=en`;
+      fetchData(url);
+    }    
+  } else {
+    alert("Please enter a search item");
+  }
+});
+
+function fetchData(url) {
+  fetch(url)
+          .then(response => response.json())
+          .then(response => {
+            giphyDiv.innerHTML = "";
+
+            for(let i=0; i<response.data.length; i++) {
+              const img = document.createElement('img');
+              img.src = response.data[i].images.original.url;  
+              giphyDiv.appendChild(img);
+            }
+          });
+
+}
+  
