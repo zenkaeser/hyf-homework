@@ -1,27 +1,44 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Weather layer</title>
+    <title>Weather App</title>
     <style>
        #map {
         width: 400px;
         height: 400px;
       }
+      #savedLocationDiv {margin: 30px 5px; width: 300px;}
+      a {
+        padding-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        }
+      ul {padding: 5px;}
+      li {list-style: none;}
+      .icon {display: flex; align-items: center;}
+      img {width: 30px}
+      .clear {margin:auto; display: flex; justify-content: center;}
+      button {margin: 5px 5px 20px; padding: 10px 30px;}
     </style> 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
   </head>
   <body>
     <h1>Weather App</h1>
-    <input id="searchInput"> <br><br>
-    <button type="button" id="searchButton">Search weather</button> <br><br>
+    <label>Enter City: </label>
+    <input id="searchInput"><br><br>
+    <button type="button" id="positionButton">Get Current Position</button><br>
+    <button type="button" id="searchButton">Search weather</button>
     <div id="weatherDiv"></div>
 
     </div>
     <div id="map">
       
     </div>
-    <div id="currentPosition">
-      <button></button>
+    <h3>Here are your saved Locations: </h3>
+    <div id="savedLocationDiv">
+      <ul id="savedCitiesUl">
+
+      </ul>
     </div>
   </body>
   <script type="text/javascript" src="weather.js"></script>
