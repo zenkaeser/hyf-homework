@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      #myCanvas {
+        border: 1px solid #dedede;
+      }
+      .normal {
+        width: 500px;
+        height: 300px;
+      }
+      .screenWide {
+        width: 100%;
+        height: 100%;
+      }
+      #screenWideButton {
+        background-color: lightgreen;
+        padding: 10px 30px;
+        opacity: 1;
+        margin: 30px 10px 5px;
+      }
+      #screenWideButton:hover {
+        opacity: 0.8;
+      }
+      span {
+        visibility: hidden;
+        margin: 0;
+      }
+      .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s
+      }
+    </style> </head>
+  <body>
+    <canvas id="myCanvas" class="normal">
+
+    </canvas> <br>
+    <button id="screenWideButton">Click Me!</button>
+    <span id="hiddenP">Clicking this button will adjust the screen size.</span>
+    <ul id="reposUl">
+    </ul>
+  </body>
+  <script src="exercise.js"></script>
+  <script src="circles.js"></script>
+  <script src="repo.js"></script>
+  
+</html>
