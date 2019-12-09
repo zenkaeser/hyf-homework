@@ -1,0 +1,46 @@
+SELECT * FROM task;
+SELECT * FROM status;
+
+INSERT INTO task VALUES (36, "Answering homework", "Database Week2", '20191209', 20191209, 20191209, 1, 2);
+
+UPDATE task 
+	SET title = "Really Answering the homework"
+    WHERE id = 36;
+    
+UPDATE task 
+	SET due_date = "20191210"
+    WHERE id = 36;
+    
+UPDATE task 
+	SET status_id = 2
+    WHERE id = 36;
+    
+UPDATE task 
+	SET status_id = 3
+    WHERE id = 36;
+
+DELETE FROM task WHERE id = 35;
+
+
+------------------
+
+CREATE TABLE class (
+	id	int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    begins datetime,
+    ends datetime
+);
+
+CREATE TABLE student (
+	id	int AUTO_INCREMENT  PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    email varchar(255),
+    phone varchar(255),
+    class_id int,
+	CONSTRAINT FK_class_id FOREIGN KEY (class_id)
+ 	REFERENCES class(id) 
+ );
+
+ALTER TABLE student ADD INDEX (name);
+
+ALTER TABLE class ADD COLUMN status enum ('not-started', 'ongoing', 'finished'); 
