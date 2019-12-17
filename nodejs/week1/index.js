@@ -1,0 +1,2 @@
+
+const getFooter = require("./footer");
