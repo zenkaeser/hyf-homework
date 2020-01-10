@@ -1,20 +1,33 @@
+
+Delete task with this attribute: taskID
+
 SELECT * FROM task;
 SELECT * FROM status;
 
-INSERT INTO task VALUES (36, "Answering homework", "Database Week2", '20191209', 20191209, 20191209, 1, 2);
-
+1. Add a task with the these attributes: title, description, created, updated, dueDate, statusID, userID
+INSERT INTO task (title, description, created, updated, due_date, status_id, user_id) 
+	VALUES ("Answering homework", "Database Week2", '20191209', 20191209, 20191209, 1, 2);
+	or
+INSERT INTO task 
+	VALUES (NULL, "Answering homework2", "Database Week2", '20191209', 20191209, 20191209, 1, 2);
+..setting the value to null auto assigns the value
+	
+2.Change the title of a task with these attributes: taskID, newTitle
 UPDATE task 
 	SET title = "Really Answering the homework"
     WHERE id = 36;
     
+3. Change the task due date with these attributes: taskID, newDueDate   
 UPDATE task 
 	SET due_date = "20191210"
     WHERE id = 36;
-    
+
+4. Change the task status with these attributes: taskID, newStatus
 UPDATE task 
 	SET status_id = 2
     WHERE id = 36;
-    
+
+5.  Mark a task as complete with this attribute: taskID
 UPDATE task 
 	SET status_id = 3
     WHERE id = 36;
