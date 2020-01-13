@@ -1,10 +1,9 @@
-getTitle = function(title) {
-    return `<head><title>${title}</title></head>`;
+const doStyle = require('./styles');
+
+getTitle = (title) => {
+    return `<head>${doStyle()}<title>${title}</title></head>`
+    // return "<head>" +doStyle()+ "<title>"+title+"</title></head>";
 }
 
 module.exports = getTitle;
 
-
-// module.exports = function(title) {
-//     return `<head><title>${title}</title></head>`;
-// }
