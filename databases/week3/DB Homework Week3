@@ -1,0 +1,129 @@
+#creating a database
+CREATE DATABASE MealApp;
+
+#creating the table meal
+CREATE TABLE meal (
+	id INT NOT NULL AUTO_INCREMENT ,
+    title VARCHAR(255)  NOT NULL,
+    description TEXT,
+    location VARCHAR(255),
+    max_reservations INT,
+    price DECIMAL NOT NULL,
+    created_date DATE NOT NULL,
+    PRIMARY KEY (id)
+);
+
+#altering the table to add the 'when' column because it cannot be add the normal way due to restrictions
+ALTER TABLE `mealapp`.`meal` 
+	ADD COLUMN `when` DATETIME NULL AFTER `location`;
+	
+#added a `unique` constraint to avoid duplicate entries(optional)
+ALTER TABLE `meal` ADD UNIQUE (title);
+
+#creating the table reservation
+CREATE TABLE reservation (
+	id INT NOT NULL AUTO_INCREMENT ,
+	number_of_guests INT NOT NULL,
+    meal_id	INT,
+    created_date DATE NOT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (meal_id) REFERENCES meal(id)
+);
+
+#creating the table review
+CREATE TABLE review (
+	id 	INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    description TEXT,
+    meal_id INT NOT NULL,
+    stars 	INT NOT NULL, 
+    created_date DATE NOT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (meal_id) REFERENCES meal(id)
+);
+
+SET NAMES utf8mb4;
+
+Meal---
+#1. Get all meals
+	SELECT * FROM meal;
+#2. Add a new meal
+	INSERT INTO meal 
+		values (null, "Women & Whiskies", "Drinking whiskies", "Lot 579 Harvest Dinner", "2019-11-10", 2, 60, "2019-03-01");
+	INSERT INTO meal 
+		values (null, "Burgers", "Giant Burgers", "Kerteminde, DK", "2019-12-10", 2, 100, "2019-03-08");
+#3. Get a meal with any id, fx 1
+	SELECT * from meal WHERE id = 1;
+
+#4. Update a meal with any id, fx 1. Update any attribute fx the title or multiple attributes
+	UPDATE meal 
+		SET title = "Women, Bi's and Whishkies"
+		WHERE id = 1;
+#5. Delete a meal with any id, fx 1
+	DELETE FROM meal WHERE id = 2;
+
+
+Reservation---
+#1. Get all reservations
+	SELECT * FROM reservation;
+	
+#2. Add a new reservation
+	INSERT INTO reservation
+		values (null, 5, 1, "2019-03-08");
+	INSERT INTO reservation
+		values (null, 2, 1, "2019-03-08");
+		
+#3. Get a reservation with any id, fx 1
+	SELECT * FROM reservation WHERE id = 1;
+	
+#4. Update a reservation with any id, fx 1. Update any attribute fx the title or multiple attributes
+	UPDATE reservation 
+	SET number_of_guests = "4"
+    WHERE id = 1;
+	
+#5. Delete a reservation with any id, fx 1
+	DELETE FROM reservation WHERE id = 1;
+
+
+Review---
+#1. Get all reviews
+	SELECT * FROM review;
+	
+#2. Add a new review
+	INSERT INTO review
+		values (null, "Awesome Meal", "The meal is awesome. Can't say more.",1,5, "2019-03-9");
+	INSERT INTO review
+		values (null, "Best Meal", "One of the best meal I ever had.",1,5, "2019-03-10");
+        
+#3. Get a review with any id, fx 1
+	SELECT * FROM review WHERE id = 1;
+	
+#4. Update a review with any id, fx 1. Update any attribute fx the title or multiple attributes
+	UPDATE review 
+	SET title = "The very best meal"
+    WHERE id = 2;
+    
+#5. Delete a review with any id, fx 1
+	DELETE FROM reservation WHERE id = 1;
+
+
+Additional queries
+Now add a couple of different meals, reservations and reviews with different attributes. With those meals create the following queries
+
+#inserting more values to DB. . .
+	INSERT INTO meal 
+		values (null, "Taco Tuesday's", "Coz' every tuesday is Taco day!", "Odense, DK", "2020-03-01", 2, 50, "2019-02-01");
+	INSERT INTO meal 
+		values (null, "Burrito Burp", "Burrito that makes you want to burp", "Langeland, DK", "2020-02-08", 2, 100, "2019-01-08");
+	INSERT INTO reservation
+		values (null, 3, 3, "2019-02-08");
+	INSERT INTO reservation
+		values (null, 2, 4, "2019-02-08");
+	INSERT INTO review
+		values (null, "Food was great", "All is well",3,4, "2019-03-9");
+	INSERT INTO review
+		values (null, "Okay", "The food was okay. Kidding, It was fantastic!",3,5, "2019-04-10");
+
+
+Functionality
+#MYSQL queries are added and implemented to NODEJS. The rest of the answer to this homework is saved on NODEJS W1 folder.
