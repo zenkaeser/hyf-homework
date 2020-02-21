@@ -1,0 +1,18 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "start": "node main",
+    "dev": "nodemon main"
+  },
+  "author": "",
+  "license": "ISC"
+}
