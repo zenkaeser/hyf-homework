@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-
 const mealsRouter = require('./routes/meals.js');
 const cheapMealsRouter = require('./routes/cheap-meals.js');
 const largeMealsRouter = require('./routes/large-meals.js');
@@ -16,6 +15,5 @@ app.get('/large-meals', largeMealsRouter);
 app.get('/meal', mealRouter);
 app.get('/reservations', reservationsRouter);
 app.get('/reservation', reservationRouter);
-
 
 app.listen(8000);
