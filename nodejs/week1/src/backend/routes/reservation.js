@@ -1,13 +1,9 @@
-const reservationsRouter = require('./reservations.js');
-
+const reservationsRouter = require("./reservations.js");
 
 function reservationRouter() {
-    let reservations = reservationsRouter.reservationsRouter;
-    let item = reservations[Math.floor(Math.random()*reservations.length)];
+    const reservations = reservationsRouter.reservationsRouter;
 
-    return item;
+    return reservations[Math.floor (Math.random() * reservations.length) ];
 }
 
-module.exports = (request, response) => {
-    response.send(reservationRouter());
-};
+module.exports = (request, response) => response.send(reservationRouter());

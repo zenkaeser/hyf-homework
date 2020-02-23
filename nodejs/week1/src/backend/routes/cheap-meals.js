@@ -1,21 +1,10 @@
 const mealsRouter = require('./meals.js');
-
-let cheapPrice = 90;
-let cheapMeals = [];
+const cheapPrice = 50;
 
 function cheapMealsRouter() {
-    let meals = mealsRouter.mealsRouter;
+    const meals = mealsRouter.mealsRouter;
     
-    meals.forEach(element => {
-        if(element.price <= cheapPrice) { 
-            cheapMeals.push(element);
-            console.log(cheapMeals);
-        }
-    });
-    return cheapMeals;
-
+    return meals.filter( (element) => element.price <= cheapPrice );
 }
 
-module.exports = (request, response) => {
-    response.send(cheapMealsRouter());
-};
+module.exports = (request, response) => response.send(cheapMealsRouter());

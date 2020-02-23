@@ -1,12 +1,9 @@
-const mealsRouter = require('./meals.js');
+const mealsRouter = require("./meals.js");
 
 function mealRouter() {
-    let meals = mealsRouter.mealsRouter;
-    let item = meals[Math.floor(Math.random()*meals.length)];
+    const meals = mealsRouter.mealsRouter;
     
-    return item;
+    return meals[Math.floor(Math.random()*meals.length)];
 }
 
-module.exports = (request, response) => {
-    response.send(mealRouter());
-};
+module.exports = (request, response) => response.send(mealRouter());
