@@ -33,6 +33,7 @@ export const TodoLists = () => {
   return (
     <div>
       <button onClick={handleNew}>Add Todo </button>
+      {todoList.length === 0 ? <p>No Items</p> : null}
       {todoList.map((list, id) => {
         return (
           <TodoListItem
