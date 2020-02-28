@@ -8,6 +8,7 @@ export const TodoLists = () => {
   const [newDescription, setDescription] = useState("");
   const [newDeadline, setDeadline] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const currDate = new Date();
 
   useEffect(() => {
     const getData = async () => {
@@ -26,11 +27,17 @@ export const TodoLists = () => {
       deadline: newDeadline
     };
     const list = [...todoList];
-    if (item.description && item.deadline) list.push(item);
-    else alert("Add something first...");
-    setDeadline("");
-    setDescription("");
-    setTodoList(list);
+
+    if (item.description) {
+      if (new Date(item.deadline) > currDate) {
+        list.push(item);
+        setDeadline("");
+        setDescription("");
+        setTodoList(list);
+      } else {
+        alert("Deadline cannot be an earlier date.");
+      }
+    } else alert("Description field cannot be blank.");
   };
 
   const handleDelete = id => {
