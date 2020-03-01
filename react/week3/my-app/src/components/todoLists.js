@@ -7,7 +7,7 @@ const url =
 export const TodoLists = () => {
   const [newDescription, setDescription] = useState("");
   const [newDeadline, setDeadline] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoLists, setTodoLists] = useState([]);
   const currDate = new Date();
 
   useEffect(() => {
@@ -16,24 +16,28 @@ export const TodoLists = () => {
         return response.json();
       });
 
-      setTodoList(result);
+      setTodoLists(result);
     };
     getData();
   }, []);
 
   const handleNew = () => {
     const item = {
+      id: 0,
       description: newDescription,
       deadline: newDeadline
     };
-    const list = [...todoList];
 
     if (item.description) {
       if (new Date(item.deadline) > currDate) {
-        list.push(item);
+        const newLists = todoLists;
+        const lastList = newLists[newLists.length - 1];
+        
+        item.id = lastList.id + 1;
+        newLists.push(item);
+        setTodoLists([...newLists]);
         setDeadline("");
         setDescription("");
-        setTodoList(list);
       } else {
         alert("Deadline cannot be an earlier date.");
       }
@@ -41,28 +45,23 @@ export const TodoLists = () => {
   };
 
   const handleDelete = id => {
-    const newList = todoList;
-    newList.splice(id, 1);
-    setTodoList([...newList]);
+    const newLists = todoLists;
+    newLists.splice(id, 1);
+    setTodoLists([...newLists]);
   };
 
-  const handleEdit = (descr, id) => {
-    console.log("nd", descr, id);
+  const handleEdit = id => {
     if (NewDescription) {
-      const newList = todoList;
+      const newList = todoLists;
 
       for (let item of newList) {
-        console.log(item);
         if (item.id === id) item.description = NewDescription;
       }
-      setTodoList([...newList]);
+      setTodoLists([...newList]);
     }
-    console.log(descr);
   };
 
-  const handleDescriptionChange = e => {
-    setDeadline(e.target.value);
-  };
+  const handleDescriptionChange = e => setDeadline(e.target.value);
 
   return (
     <div>
@@ -81,15 +80,15 @@ export const TodoLists = () => {
       />
       <div>
         <button className="add" onClick={handleNew}>
-          Add Todo{" "}
-        </button>{" "}
+          Add Todo
+        </button>
       </div>
-      {todoList.length === 0 ? <p>No Items</p> : null}
-      {todoList.map((list, id) => {
+      {todoLists.length === 0 ? <p>No Items</p> : null}
+      {todoLists.map((list, id) => {
         return (
           <TodoListItem
             key={id}
-            id={id}
+            id={list.id}
             description={list.description}
             deadline={list.deadline}
             onDelete={() => handleDelete(id)}
